@@ -30,7 +30,18 @@ public class Character : MonoBehaviour
         defencePower += (int)(defencePower * .33f);
     }
 
-    public void Die(){
+    public bool CastSpell(Spell spell, Character targetCharacter){
+        bool successCast = (manaPoint >= spell.manaCost);
+
+        if (successCast){
+            Spell spellToCast = Instantiate<Spell>(spell, transform.position, Quaternion.identity); // Create an instance of an object, no rotation 
+            manaPoint -= spell.manaCost;
+            spellToCast.CastSpell(targetCharacter);
+        }
+
+        return successCast;
+    }
+    public virtual void Die(){      // Method can be redefined in derived class when using virtual
         Destroy(this.gameObject);
     }
 }

@@ -22,13 +22,13 @@ public class Spell : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    public void CastSpell(GameObject target){
+    public void CastSpell(Character target){
         targetPosition = target.transform.position;
 
         if (spellType == SpellType.Attack){
-            
+            target.Hurt(power);
         } else if (spellType == SpellType.Heal){
-
+            target.Heal(power);
         }
     }
 }
