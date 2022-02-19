@@ -11,6 +11,7 @@ public class Enemy : Character
 
     public void Act(){
         int dieRoll = Random.Range(0, 2);
+        Character target = BattleController.Instance.GetRandomPlayer();
         switch(dieRoll){
             case 0:
                 Defend();
@@ -20,8 +21,9 @@ public class Enemy : Character
                 Spell spellToCast = GetRandomSpell();
                 if(spellToCast.spellType == Spell.SpellType.Heal){
                     // get friendly weak unit
+                    target = BattleController.Instance.GetWeakestUnit();
                 }
-                if(!CastSpell(spellToCast, null)){
+                if(!CastSpell(spellToCast, target)){
                     // attack
                 }
                 break;
