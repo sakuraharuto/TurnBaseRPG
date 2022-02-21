@@ -36,6 +36,60 @@ public class BattleController : MonoBehaviour
 
         return weakestUnit;
     }
+
+    private void nextTurn(){
+        activeTurn = activeTurn == 0 ? 1 : 0;  // If we are in turn 0, set activeTurn to 1. If its not 0, which means we are in turn 1, set activeTurn to 0
+    }
+
+    private void nextAct(){
+        // If we have one friendly and one enemy alive
+        if (characters[0].Count > 0 && characters[1].Count > 0){
+            if (characterTurnIndex < (characters[activeTurn].Count - 1)){
+                characterTurnIndex++;
+            } else {
+                nextTurn();
+                characterTurnIndex = 0;
+            }
+
+            switch(activeTurn){
+                case 0:
+                // UI stuff
+                break;
+
+                case 1:
+                //UI stuff and action
+                StartCoroutine(PerformAct());
+                break;
+            }
+        } else {
+            Debug.Log("Battle finish"); // One side all dead, back to town scene maybe? 
+        }
+    }
+
+    IEnumerator PerformAct(){
+        yield return new WaitForSeconds(.75f);
+        if(characters[activeTurn][characterTurnIndex].health > 0){
+            characters[activeTurn][characterTurnIndex].GetComponent<Enemy>().Act();
+        }
+        yield return new WaitForSeconds(1f);
+        nextAct();
+    }
+
+    public void SelectCharacter(Character character){
+        if(playerIsAttack){
+            DoAttack(characters[activeTurn][characterTurnIndex], character);
+        } else if(playerSelectedSpell != null){
+            if(characters[activeTurn][characterTurnIndex].CastSpell(playerSelectedSpell, character)){
+                nextAct();
+            } else {
+                Debug.LogWarning("Not enough mana to cast spell");
+            }
+        }
+    }
+
+    public void DoAttack(Character attacker, Character target){
+        target.Hurt(attacker.attackPower);
+    }
     public void StartBattle(List<Character> players, List<Character> enemies){
         for(int i = 0; i < players.Count; i++){
             characters[0].Add(spwanPoints[i + 3].Spwan(players[i]));     // Spawn point(3,4,5) belong to players, so use i + 3

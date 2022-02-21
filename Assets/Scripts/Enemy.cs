@@ -7,6 +7,7 @@ public class Enemy : Character
     public override void Die()
     {
         base.Die();
+        BattleController.Instance.characters[1].Remove(this);
     }
 
     public void Act(){
@@ -25,10 +26,12 @@ public class Enemy : Character
                 }
                 if(!CastSpell(spellToCast, target)){
                     // attack
+                    BattleController.Instance.DoAttack(this, target);
                 }
                 break;
             case 2:
                 // attack
+                BattleController.Instance.DoAttack(this, target);
                 break;
         }
     }
