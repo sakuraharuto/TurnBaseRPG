@@ -5,7 +5,7 @@ using UnityEngine;
 public class BattleController : MonoBehaviour
 {   
     public static BattleController Instance {get; set;}
-    public Dictionary<int, List<Character>> characters = new Dictionary<int, List<Character>>();  // 0 for player, 1 for enemy. For example, characters[1][0] means first character on enemy side
+    public Dictionary<int, List<Character>> characters = new Dictionary<int, List<Character>>();  // 0 for player, 1 for enemy. For example, characters[1][0] means first character on enemy team
     public int characterTurnIndex;
     public int activeTurn;
     public Spell playerSelectedSpell;
@@ -21,6 +21,8 @@ public class BattleController : MonoBehaviour
         }
         characters.Add(0, new List<Character>());
         characters.Add(1, new List<Character>());
+
+        FindObjectOfType<BattleLauncher>().Launch();  // Call Launch function from BattleLauncher class instaed of BattleController class
     }
 
     public Character GetRandomPlayer(){

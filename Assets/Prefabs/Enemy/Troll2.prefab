@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2136441191495720777}
-  - component: {fileID: 2136441191495720778}
   - component: {fileID: 2136441191495720779}
   - component: {fileID: 2136441191495720780}
+  - component: {fileID: -255593391059057839}
   m_Layer: 0
   m_Name: Troll2
   m_TagString: character
@@ -34,26 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2136441191495720778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2136441191495720781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2256c2f05a714c3384cf8fe7e540956, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterName: Arakn
-  health: 20
-  maxHealth: 20
-  attackPower: 10
-  defencePower: 2
-  manaPoint: 15
-  spells:
-  - {fileID: 1485390874847983194, guid: db5622d9fdbb14fd980bfb4744321b3d, type: 3}
 --- !u!212 &2136441191495720779
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -132,3 +112,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.0001, y: 0.0001}
   m_EdgeRadius: 0
+--- !u!114 &-255593391059057839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136441191495720781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b237612fe9b964f8290300b035950a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Troll2
+  health: 20
+  maxHealth: 20
+  attackPower: 10
+  defencePower: 5
+  manaPoint: 20
+  spells: []
