@@ -30,7 +30,6 @@ public class Enemy : Character
                 }
                 if(!CastSpell(spellToCast, target)){
                     // attack
-                    Debug.Log("Enemy cast spell");
                     BattleController.Instance.DoAttack(this, target);
                 }
                 break;
