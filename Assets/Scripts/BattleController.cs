@@ -98,6 +98,9 @@ public class BattleController : MonoBehaviour
 
     public void DoAttack(Character attacker, Character target){
         target.Hurt(attacker.attackPower);
+        if(activeTurn == 0){
+            nextAct();
+        }    
     }
     public void StartBattle(List<Character> players, List<Character> enemies){
         for(int i = 0; i < players.Count; i++){

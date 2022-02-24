@@ -31,6 +31,7 @@ public class BattleUIController : MonoBehaviour
     }
 
     public void ToggleSpellPanel(bool state){
+        spellPanel.SetActive(state);
         if(state == true){
             BuildSpellList(BattleController.Instance.GetCurrentCharacter().spells);
         }
@@ -51,7 +52,7 @@ public class BattleUIController : MonoBehaviour
 
         foreach(Spell spell in spells){
             Button spellButton = Instantiate<Button>(button, spellPanel.transform); // Create instance of spell button prefab
-            spellButton.GetComponentInChildren<Text>().text = spell.spellName;
+            spellButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = spell.spellName;
             spellButton.onClick.AddListener(() => SelectSpell(spell));    // AddListener 
         }
     }
@@ -60,7 +61,7 @@ public class BattleUIController : MonoBehaviour
         BattleController.Instance.playerIsAttack = false;
     }
 
-    void SelectAttack(){
+    public void SelectAttack(){
         BattleController.Instance.playerSelectedSpell = null;
         BattleController.Instance.playerIsAttack = true;
     }

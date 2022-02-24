@@ -207,7 +207,7 @@ MonoBehaviour:
   - {fileID: 1934043519}
   - {fileID: 1538855666}
   - {fileID: 667620030}
-  uiController: {fileID: 0}
+  uiController: {fileID: 1134698116}
 --- !u!4 &33243626
 Transform:
   m_ObjectHideFlags: 0
@@ -1371,7 +1371,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 773447500}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1134698116}
+        m_TargetAssemblyTypeName: BattleUIController, Assembly-CSharp
+        m_MethodName: SelectAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &773447500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2087,7 +2099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d413123159a1945e389eade893690ffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellPanel: {fileID: 1331261669}
+  spellPanel: {fileID: 971532921}
   actionButtons:
   - {fileID: 1331261671}
   - {fileID: 773447499}
@@ -2437,7 +2449,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1331261672}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1134698116}
+        m_TargetAssemblyTypeName: BattleUIController, Assembly-CSharp
+        m_MethodName: ToggleSpellPanel
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1331261672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2559,7 +2583,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1359320876}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1134698116}
+        m_TargetAssemblyTypeName: BattleUIController, Assembly-CSharp
+        m_MethodName: Defend
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1359320876
 MonoBehaviour:
   m_ObjectHideFlags: 0

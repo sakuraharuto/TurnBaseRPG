@@ -13,7 +13,9 @@ public class Character : MonoBehaviour
     public List<Spell> spells;
 
     public void Hurt(int amount){
-        int damageAmount = Random.Range(0, 1) * (amount - defencePower); // Either do 0 damage or full damage
+        //int damageAmount = Random.Range(0, 2) * (amount - defencePower); // Either do 0 damage or full damage
+        int damageAmount = amount;
+        Debug.Log(damageAmount);
         health = Mathf.Max(health - damageAmount, 0); // Ensure health never go below 0
         if (health == 0){
             // Character die
@@ -22,7 +24,8 @@ public class Character : MonoBehaviour
     }
 
     public void Heal(int amount){
-        int healAmount = (int)(amount + (maxHealth * .33f)); // The more max HP you have, the more heal you received
+        //int healAmount = (int)(amount + (maxHealth * .33f)); // The more max HP you have, the more heal you received
+        int healAmount = amount;
         health = Mathf.Min(health + healAmount, maxHealth); // Ensure health not above max health 
     }
 

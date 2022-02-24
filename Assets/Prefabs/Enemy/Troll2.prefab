@@ -99,7 +99,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.08673975, y: -0.3363068}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -110,7 +110,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.0001, y: 0.0001}
+  m_Size: {x: 0.82488865, y: 1.4883716}
   m_EdgeRadius: 0
 --- !u!114 &-255593391059057839
 MonoBehaviour:
@@ -130,4 +130,6 @@ MonoBehaviour:
   attackPower: 10
   defencePower: 5
   manaPoint: 20
-  spells: []
+  spells:
+  - {fileID: 3870526454307538571, guid: 093cf7d78c5044299b968383ff3aab98, type: 3}
+  - {fileID: 1485390874847983194, guid: db5622d9fdbb14fd980bfb4744321b3d, type: 3}
