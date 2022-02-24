@@ -32,7 +32,7 @@ public class BattleUIController : MonoBehaviour
 
     public void ToggleSpellPanel(bool state){
         spellPanel.SetActive(state);
-        Debug.Log(state);
+        //Debug.Log(state);
         if(state == true){
             BuildSpellList(BattleController.Instance.GetCurrentCharacter().spells);
         }

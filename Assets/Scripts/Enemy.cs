@@ -16,8 +16,8 @@ public class Enemy : Character
         Character target = BattleController.Instance.GetRandomPlayer();
         switch(dieRoll){
             case 0:
-                Defend();
                 Debug.Log("Enemy defend");
+                Defend(); 
                 break;
             case 1:
                 // cast spell
@@ -25,19 +25,19 @@ public class Enemy : Character
                 //Debug.Log(spellToCast.spellType);
                 if(spellToCast.spellType == Spell.SpellType.Heal){
                     // get friendly weak unit
-                    target = BattleController.Instance.GetWeakestUnit();
                     Debug.Log("Enemy heal");
+                    target = BattleController.Instance.GetWeakestUnit();
                 }
                 if(!CastSpell(spellToCast, target)){
                     // attack
+                    Debug.Log("Enemy cast spell");
                     BattleController.Instance.DoAttack(this, target);
-                    Debug.Log("Enemy Attack");
                 }
                 break;
             case 2:
                 // attack
-                BattleController.Instance.DoAttack(this, target);
                 Debug.Log("Enemy attack");
+                BattleController.Instance.DoAttack(this, target);
                 break;
         }
     }
